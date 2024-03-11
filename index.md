@@ -8,34 +8,34 @@
 <body>
     <h1>Decolonization project</h1>
     <img src="main/map.jpg" alt="Map of the project" width="500">
-{
-  "schema": {
-    "message": {
-      "type": "string",
-      "title": "Сообщение"
-    },
-    "author": {
-      "type": "object",
-      "title": "Автор",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "Имя"
-        },
-        "gender": {
-          "type": "string",
-          "title": "Пол",
-          "enum": [ "male", "female", "alien" ]
-        },
-        "magic": {
-          "type": "integer",
-          "title": "Магический номер",
-          "default": 42
-        }
-      }
-    }
-  }
-}
-    
+
+
+    <form id="myForm">
+        <label for="message">Message:</label><br>
+        <input type="text" id="message" name="message"><br><br>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch('URL_TO_SERVER_ENDPOINT', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                } else {
+                    alert('Failed to send message.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+
 </body>
 </html>
