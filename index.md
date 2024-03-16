@@ -20,7 +20,7 @@
         document.getElementById('myForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
-            fetch('https://d5dor76s04fkl57h3jea.apigw.yandexcloud.net', {
+            fetch('https://functions.yandexcloud.net/d4ejmqn8brddsad1npka', {
                 method: 'POST',
                 body: formData
             })
