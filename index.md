@@ -20,7 +20,7 @@
         document.getElementById('myForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
-            fetch('URL_TO_SERVER_ENDPOINT', {
+            fetch('https://d5dor76s04fkl57h3jea.apigw.yandexcloud.net', {
                 method: 'POST',
                 body: formData
             })
