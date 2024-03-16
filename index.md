@@ -16,26 +16,30 @@
         <button type="submit">Send Message</button>
     </form>
 
-    <script>
-        document.getElementById('myForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            fetch('https://functions.yandexcloud.net/d4ejmqn8brddsad1npka', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Message sent successfully!');
-                } else {
-                    alert('Failed to send message.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        
+        // Добавляем параметр запроса integration=raw к URL
+        const url = 'https://d5dor76s04fkl57h3jea.apigw.yandexcloud.net?integration=raw';
+        
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Message sent successfully!');
+            } else {
+                alert('Failed to send message.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
         });
-    </script>
+    });
+</script>
 
 </body>
 </html>
