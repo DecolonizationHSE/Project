@@ -19,14 +19,18 @@
 <script>
     document.getElementById('myForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        const formData = new FormData(this);
         
-        // Добавляем параметр запроса integration=raw к URL
-        const url = 'https://d5dor76s04fkl57h3jea.apigw.yandexcloud.net?integration=raw';
+        const message = document.getElementById('message').value; // Получаем значение текстового поля
+        
+        const url = 'https://functions.yandexcloud.net/d4ejmqn8brddsad1npka'; // Укажите URL вашего сервера, на который будет отправляться сообщение
+        const data = { message: message }; // Создаем объект для отправки
         
         fetch(url, {
             method: 'POST',
-            body: formData
+            headers: {
+                'Content-Type': 'application/json' // Устанавливаем тип контента как JSON
+            },
+            body: JSON.stringify(data) // Преобразуем объект в формат JSON
         })
         .then(response => {
             if (response.ok) {
