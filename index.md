@@ -80,7 +80,7 @@
         fetch(url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json' // Устанавливаем тип контента как JSON
+                'Content-Type': 'json' // Устанавливаем тип контента как JSON
             },
             body: JSON.stringify(data) // Преобразуем объект в формат JSON
         })
