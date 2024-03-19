@@ -25,29 +25,23 @@
         const url = 'https://functions.yandexcloud.net/d4ejmqn8brddsad1npka'; // Укажите URL вашего сервера, на который будет отправляться сообщение
         const data = { message: message }; // Создаем объект для отправки
         
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'content-type':'text/plain'
-            },
-            body: JSON.stringify(data) // Преобразуем объект в формат JSON
-        })
-        .then(response => {
-            if (response.ok) {
-                alert('Message sent successfully!');
-            } else {
-                alert('Failed to send message.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-
-
-
-            
-        });
-    });
-</script>
+       fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'  // Используем 'application/json' для типа содержимого
+    },
+    body: JSON.stringify(data) // Преобразуем объект в формат JSON
+})
+.then(response => {
+    if (response.ok) {
+        alert('Message sent successfully!');
+    } else {
+        alert('Failed to send message.');
+    }
+})
+.catch(error => {
+    console.error('Error:', error);
+});
 
 </body>
 </html>
