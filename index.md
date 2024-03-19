@@ -28,7 +28,7 @@
        fetch(url, {
     method: 'POST',
     headers: {
-        'content-type': 'text/plain'  // Используем 'application/json' для типа содержимого
+        'content-type': 'application/json'  // Используем 'application/json' для типа содержимого
     },
     body: JSON.stringify(data) // Преобразуем объект в формат JSON
 })
