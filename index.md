@@ -6,16 +6,11 @@
     <title>Decolonization project</title>
 </head>
 <body>
-    <h1>Decolonization project</h1>
-    <img src="main/map.jpg" alt="Map of the project" width="500">
-
-
-    <form id="myForm">
-        <label for="message">Message:</label><br>
-        <input type="text" id="message" name="message"><br><br>
-        <button type="submit">Send Message</button>
-    </form>
-
+<form id="myForm">
+    <label for="message">Message:</label><br>
+    <input type="text" id="message" name="message"><br><br>
+    <button type="submit">Send Message</button>
+</form>
 <script>
     document.getElementById('myForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -39,6 +34,7 @@
         alert('Failed to send message.');
     }
 })
+</script>
 .catch(error => {
     console.error('Error:', error);
 });
