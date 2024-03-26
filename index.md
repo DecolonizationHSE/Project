@@ -3,41 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decolonization project</title>
+    <title>Decolonization project_1</title>
 </head>
 <body>
-<form id="myForm">
-    <label for="message">Message:</label><br>
-    <input type="text" id="message" name="message"><br><br>
-    <button type="submit">Send Message</button>
-</form>
-<script>
-    document.getElementById('myForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const message = document.getElementById('message').value; // Получаем значение текстового поля
-        
-        const url = 'https://functions.yandexcloud.net/d4ejmqn8brddsad1npka'; // Укажите URL вашего сервера, на который будет отправляться сообщение
-        const data = { message: message }; // Создаем объект для отправки
-        
-       fetch(url, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'  // Используем 'application/json' для типа содержимого
-    },
-    body: JSON.stringify(data) // Преобразуем объект в формат JSON
-})
-.then(response => {
-    if (response.ok) {
-        alert('Message sent successfully!');
-    } else {
-        alert('Failed to send message.');
-    }
-})
-</script>
-.catch(error => {
-    console.error('Error:', error);
-});
-</script>
+    <form id="myForm">
+        <label for="message">Message:</label><br>
+        <input type="text" id="message" name="message"><br><br>
+        <button type="submit">Send Message</button>
+    </form>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const message = document.getElementById('message').value; // Get the value of the text field
+            
+            const url = 'https://functions.yandexcloud.net/d4ejmqn8brddsad1npka'; // Specify the URL of your server to send the message
+            const data = { message: message }; // Create an object for sending
+            
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json' // Use 'application/json' as the content type
+                },
+                body: JSON.stringify(data) // Convert the object to JSON format
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                } else {
+                    alert('Failed to send message.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
 </body>
 </html>
