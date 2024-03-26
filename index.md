@@ -1,4 +1,4 @@
-<!DOCTYPE_3 html>
+<!DOCTYPE_4 html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
             
             const message = document.getElementById('message').value; // Get the value of the text field
             
-            const url = 'https://d5dor76s04fkl57h3jea.apigw.yandexcloud.net'; // Specify the URL of your server to send the message
+            const url = 'https://functions.yandexcloud.net/d4ejmqn8brddsad1npka'; // Specify the URL of your server to send the message
             const data = { message: message }; // Create an object for sending
             
             fetch(url, {
