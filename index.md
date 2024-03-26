@@ -1,4 +1,4 @@
-<!DOCTYPE_4 html>
+<!DOCTYPE_5 html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,9 +23,9 @@
             fetch(url, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json' // Use 'application/json' as the content type
+                    'Content-Type': 'text/plain' 
                 },
-                body: JSON.stringify(data) // Convert the object to JSON format
+                body: JSON.stringify(data)
             })
             .then(response => {
                 if (response.ok) {
